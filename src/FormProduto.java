@@ -781,7 +781,7 @@ public class FormProduto extends javax.swing.JFrame {
 
         if (produto != null) {
 
-            cxdesconto.setText(produto.getDescricao());
+            txtdescricao.setText(produto.getDescricao());
             txtnomereduzido.setText(produto.getNome());
             txtapresentacao.setText(produto.getApresentacao());
             txtcomissao.setText(String.valueOf(produto.getComissao()));
