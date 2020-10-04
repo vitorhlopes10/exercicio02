@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cadastrarproduto;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -830,7 +830,7 @@ public class FormProduto extends javax.swing.JFrame {
             }
 
         } else {
-            JOptionPane.showMessageDialog(null, "Não foi encontrado nenhum produto com esse Id ou Nome");
+            JOptionPane.showMessageDialog(null, "Produto não encontrado!");
         }
 
     }//GEN-LAST:event_buscarprodutosActionPerformed
