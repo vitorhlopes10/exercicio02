@@ -16,13 +16,15 @@ import javax.swing.JOptionPane;
  */
 public class FormProduto extends javax.swing.JFrame {
 
+    public ArrayList<Produto> listaDeProdutos = new ArrayList();
+
     /**
      * Creates new form Cadastrarproduto
      */
     public FormProduto() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,268 +38,268 @@ public class FormProduto extends javax.swing.JFrame {
         grupovenda = new javax.swing.ButtonGroup();
         grupoestoque = new javax.swing.ButtonGroup();
         grupopromocao = new javax.swing.ButtonGroup();
-        idprodutos = new javax.swing.JLabel();
-        idProdutotxt = new javax.swing.JTextField();
-        buscarprodutos = new javax.swing.JButton();
+        labelIdentificaoProduto = new javax.swing.JLabel();
+        txtIdProduto = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        nomeProduto = new javax.swing.JTextPane();
-        dadosprodutos = new javax.swing.JLabel();
-        descricao = new javax.swing.JLabel();
-        nomereduzido = new javax.swing.JLabel();
+        txtNomeProduto = new javax.swing.JTextPane();
+        labelDadosBasicos = new javax.swing.JLabel();
+        labelDescricao = new javax.swing.JLabel();
+        labelNomeReduzido = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtdescricao = new javax.swing.JTextPane();
+        txtDescricao = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        txtnomereduzido = new javax.swing.JTextPane();
-        unidade = new javax.swing.JLabel();
-        unidades = new javax.swing.JComboBox<>();
-        apresentacao = new javax.swing.JLabel();
-        comissao = new javax.swing.JLabel();
-        codigodebarras = new javax.swing.JLabel();
+        txtNomeReduzido = new javax.swing.JTextPane();
+        labelUnidade = new javax.swing.JLabel();
+        comboUnidades = new javax.swing.JComboBox<>();
+        labelApresentacao = new javax.swing.JLabel();
+        javax.swing.JLabel labelComissao = new javax.swing.JLabel();
+        labelCodigoBarras = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        txtapresentacao = new javax.swing.JTextPane();
+        txtApresentacao = new javax.swing.JTextPane();
         jScrollPane5 = new javax.swing.JScrollPane();
-        txtcomissao = new javax.swing.JTextPane();
+        txtComissao = new javax.swing.JTextPane();
         txtcodigodebarras = new javax.swing.JScrollPane();
-        txtcodigo = new javax.swing.JTextPane();
-        tipo = new javax.swing.JLabel();
-        btproduto = new javax.swing.JRadioButton();
-        btservico = new javax.swing.JRadioButton();
-        vendadoproduto = new javax.swing.JLabel();
-        btquantidade = new javax.swing.JRadioButton();
-        btvalor = new javax.swing.JRadioButton();
-        estoqueonline = new javax.swing.JLabel();
-        btestoquesim = new javax.swing.JRadioButton();
-        btestoquenao = new javax.swing.JRadioButton();
-        convenio = new javax.swing.JLabel();
-        cxdesconto = new javax.swing.JCheckBox();
-        valoresdevarejo = new javax.swing.JLabel();
-        valordecompra = new javax.swing.JLabel();
+        txtCodigoDeBarras = new javax.swing.JTextPane();
+        labelTipo = new javax.swing.JLabel();
+        radioProduto = new javax.swing.JRadioButton();
+        radioServico = new javax.swing.JRadioButton();
+        labelVendaProduto = new javax.swing.JLabel();
+        radioQuantidade = new javax.swing.JRadioButton();
+        radioValor = new javax.swing.JRadioButton();
+        labelEstoqueOnline = new javax.swing.JLabel();
+        radioEstoqueSim = new javax.swing.JRadioButton();
+        radioEstoqueNao = new javax.swing.JRadioButton();
+        labelConvenio = new javax.swing.JLabel();
+        checkboxDesconto = new javax.swing.JCheckBox();
+        labelValoresVarejo = new javax.swing.JLabel();
+        labelValorCompra = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        txtvalordecompra = new javax.swing.JTextPane();
-        custooperacional = new javax.swing.JLabel();
+        txtValorDeCompra = new javax.swing.JTextPane();
+        labelCustoOperacional = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        txtcustooperacional = new javax.swing.JTextPane();
-        margemdelucro = new javax.swing.JLabel();
+        txtCustoOperacional = new javax.swing.JTextPane();
+        labelMargemLucro = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        txtmargemdelucro = new javax.swing.JTextPane();
-        valoravista = new javax.swing.JLabel();
+        txtMargemDeLucro = new javax.swing.JTextPane();
+        labelValorVista = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        txtvaloravista = new javax.swing.JTextPane();
-        desconto = new javax.swing.JLabel();
+        txtValorVista = new javax.swing.JTextPane();
+        labelDesconto = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        txtdesconto = new javax.swing.JTextPane();
-        posicaodeestoque = new javax.swing.JLabel();
-        estoqueminimo = new javax.swing.JLabel();
+        txtDesconto = new javax.swing.JTextPane();
+        labelPosicaoEstoque = new javax.swing.JLabel();
+        labelEstoqueMinimo = new javax.swing.JLabel();
         txtestoquemaximo = new javax.swing.JScrollPane();
-        txtestoqueminimo = new javax.swing.JTextPane();
-        estoquemaximo = new javax.swing.JLabel();
+        txtEstoqueMinimo = new javax.swing.JTextPane();
+        labelEstoqueMaximo = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
-        txtaumentomaximo = new javax.swing.JTextPane();
-        jLabel4 = new javax.swing.JLabel();
+        txtEstoqueMaximo = new javax.swing.JTextPane();
+        labelUltimoAumento = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        txtultimoaumento = new javax.swing.JTextPane();
+        txtUltimoAumento = new javax.swing.JTextPane();
         jPanel1 = new javax.swing.JPanel();
-        sair = new javax.swing.JButton();
-        listar = new javax.swing.JButton();
-        alterar = new javax.swing.JButton();
-        remover = new javax.swing.JButton();
-        cadastrar = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
+        btnRemover = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        promocao = new javax.swing.JLabel();
-        btpromocaonao = new javax.swing.JRadioButton();
-        btpromocaosim = new javax.swing.JRadioButton();
-        valordapromocao = new javax.swing.JLabel();
+        labelPromocao = new javax.swing.JLabel();
+        radioPromocaoNao = new javax.swing.JRadioButton();
+        radioPromocaoSim = new javax.swing.JRadioButton();
+        labelValorPromocao = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        txtvalordapromocao = new javax.swing.JTextPane();
-        validadedapromocao = new javax.swing.JLabel();
+        txtValorDaPromocao = new javax.swing.JTextPane();
+        labelValidadePromocao = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        txtvalidadedapromocao = new javax.swing.JTextPane();
+        txtValidadeDaPromocao = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        idprodutos.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        idprodutos.setForeground(new java.awt.Color(0, 0, 204));
-        idprodutos.setText("Identificação do Produto");
+        labelIdentificaoProduto.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        labelIdentificaoProduto.setForeground(new java.awt.Color(0, 0, 204));
+        labelIdentificaoProduto.setText("Identificação do Produto");
 
-        idProdutotxt.addActionListener(new java.awt.event.ActionListener() {
+        txtIdProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idProdutotxtActionPerformed(evt);
+                txtIdProdutoActionPerformed(evt);
             }
         });
 
-        buscarprodutos.setText("Buscar");
-        buscarprodutos.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lupa.jpeg"))); // NOI18N
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarprodutosActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
-        jScrollPane1.setViewportView(nomeProduto);
+        jScrollPane1.setViewportView(txtNomeProduto);
 
-        dadosprodutos.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        dadosprodutos.setForeground(new java.awt.Color(0, 0, 204));
-        dadosprodutos.setText("Dados Básicos");
+        labelDadosBasicos.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        labelDadosBasicos.setForeground(new java.awt.Color(0, 0, 204));
+        labelDadosBasicos.setText("Dados Básicos");
 
-        descricao.setText("Descrição:");
+        labelDescricao.setText("Descrição:");
 
-        nomereduzido.setText("Nome Reduzido:");
+        labelNomeReduzido.setText("Nome Reduzido:");
 
-        jScrollPane2.setViewportView(txtdescricao);
+        jScrollPane2.setViewportView(txtDescricao);
 
-        jScrollPane3.setViewportView(txtnomereduzido);
+        jScrollPane3.setViewportView(txtNomeReduzido);
 
-        unidade.setText("Unidade:");
+        labelUnidade.setText("Unidade:");
 
-        unidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Centímetro", "Metro", "Litro" }));
-        unidades.addActionListener(new java.awt.event.ActionListener() {
+        comboUnidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Centímetro", "Metro", "Litro" }));
+        comboUnidades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                unidadesActionPerformed(evt);
+                comboUnidadesActionPerformed(evt);
             }
         });
 
-        apresentacao.setText("Apresentação:");
+        labelApresentacao.setText("Apresentação:");
 
-        comissao.setText("Comissão:");
+        labelComissao.setText("Comissão:");
 
-        codigodebarras.setText("Código de Barras:");
+        labelCodigoBarras.setText("Código de Barras:");
 
-        jScrollPane4.setViewportView(txtapresentacao);
+        jScrollPane4.setViewportView(txtApresentacao);
 
-        jScrollPane5.setViewportView(txtcomissao);
+        jScrollPane5.setViewportView(txtComissao);
 
-        txtcodigodebarras.setViewportView(txtcodigo);
+        txtcodigodebarras.setViewportView(txtCodigoDeBarras);
 
-        tipo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        tipo.setForeground(new java.awt.Color(0, 0, 204));
-        tipo.setText("Tipo");
+        labelTipo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelTipo.setForeground(new java.awt.Color(0, 0, 204));
+        labelTipo.setText("Tipo");
 
-        grupotipo.add(btproduto);
-        btproduto.setSelected(true);
-        btproduto.setText("Produto");
-        btproduto.addActionListener(new java.awt.event.ActionListener() {
+        grupotipo.add(radioProduto);
+        radioProduto.setSelected(true);
+        radioProduto.setText("Produto");
+        radioProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btprodutoActionPerformed(evt);
+                radioProdutoActionPerformed(evt);
             }
         });
 
-        grupotipo.add(btservico);
-        btservico.setText("Serviço");
+        grupotipo.add(radioServico);
+        radioServico.setText("Serviço");
 
-        vendadoproduto.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        vendadoproduto.setForeground(new java.awt.Color(0, 0, 204));
-        vendadoproduto.setText("Venda do Produto");
+        labelVendaProduto.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelVendaProduto.setForeground(new java.awt.Color(0, 0, 204));
+        labelVendaProduto.setText("Venda do Produto");
 
-        grupovenda.add(btquantidade);
-        btquantidade.setSelected(true);
-        btquantidade.setText("Quantidade");
-        btquantidade.addActionListener(new java.awt.event.ActionListener() {
+        grupovenda.add(radioQuantidade);
+        radioQuantidade.setSelected(true);
+        radioQuantidade.setText("Quantidade");
+        radioQuantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btquantidadeActionPerformed(evt);
+                radioQuantidadeActionPerformed(evt);
             }
         });
 
-        grupovenda.add(btvalor);
-        btvalor.setText("Valor");
+        grupovenda.add(radioValor);
+        radioValor.setText("Valor");
 
-        estoqueonline.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        estoqueonline.setForeground(new java.awt.Color(0, 0, 204));
-        estoqueonline.setText("Estoque On Line");
+        labelEstoqueOnline.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelEstoqueOnline.setForeground(new java.awt.Color(0, 0, 204));
+        labelEstoqueOnline.setText("Estoque On Line");
 
-        grupoestoque.add(btestoquesim);
-        btestoquesim.setText("Sim");
+        grupoestoque.add(radioEstoqueSim);
+        radioEstoqueSim.setText("Sim");
 
-        grupoestoque.add(btestoquenao);
-        btestoquenao.setSelected(true);
-        btestoquenao.setText("Não");
+        grupoestoque.add(radioEstoqueNao);
+        radioEstoqueNao.setSelected(true);
+        radioEstoqueNao.setText("Não");
 
-        convenio.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        convenio.setForeground(new java.awt.Color(0, 0, 204));
-        convenio.setText("Convênio");
+        labelConvenio.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelConvenio.setForeground(new java.awt.Color(0, 0, 204));
+        labelConvenio.setText("Convênio");
 
-        cxdesconto.setText("Desconto");
-        cxdesconto.addActionListener(new java.awt.event.ActionListener() {
+        checkboxDesconto.setText("Desconto");
+        checkboxDesconto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxdescontoActionPerformed(evt);
+                checkboxDescontoActionPerformed(evt);
             }
         });
 
-        valoresdevarejo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        valoresdevarejo.setForeground(new java.awt.Color(0, 0, 204));
-        valoresdevarejo.setText("Valores de Varejo");
+        labelValoresVarejo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelValoresVarejo.setForeground(new java.awt.Color(0, 0, 204));
+        labelValoresVarejo.setText("Valores de Varejo");
 
-        valordecompra.setText("Valor de Compra:");
+        labelValorCompra.setText("Valor de Compra:");
 
-        jScrollPane6.setViewportView(txtvalordecompra);
+        jScrollPane6.setViewportView(txtValorDeCompra);
 
-        custooperacional.setText("Custo Operacional:");
+        labelCustoOperacional.setText("Custo Operacional:");
 
-        jScrollPane7.setViewportView(txtcustooperacional);
+        jScrollPane7.setViewportView(txtCustoOperacional);
 
-        margemdelucro.setText("Margem de Lucro:");
+        labelMargemLucro.setText("Margem de Lucro:");
 
-        jScrollPane8.setViewportView(txtmargemdelucro);
+        jScrollPane8.setViewportView(txtMargemDeLucro);
 
-        valoravista.setText("Valor à Vista:");
+        labelValorVista.setText("Valor à Vista:");
 
-        jScrollPane9.setViewportView(txtvaloravista);
+        jScrollPane9.setViewportView(txtValorVista);
 
-        desconto.setText("Desconto:");
+        labelDesconto.setText("Desconto:");
 
-        jScrollPane10.setViewportView(txtdesconto);
+        jScrollPane10.setViewportView(txtDesconto);
 
-        posicaodeestoque.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        posicaodeestoque.setForeground(new java.awt.Color(0, 0, 204));
-        posicaodeestoque.setText("Posição de Estoque");
+        labelPosicaoEstoque.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelPosicaoEstoque.setForeground(new java.awt.Color(0, 0, 204));
+        labelPosicaoEstoque.setText("Posição de Estoque");
 
-        estoqueminimo.setText("Estoque Mínimo:");
+        labelEstoqueMinimo.setText("Estoque Mínimo:");
 
-        txtestoquemaximo.setViewportView(txtestoqueminimo);
+        txtestoquemaximo.setViewportView(txtEstoqueMinimo);
 
-        estoquemaximo.setText("Estoque Máximo:");
+        labelEstoqueMaximo.setText("Estoque Máximo:");
 
-        jScrollPane14.setViewportView(txtaumentomaximo);
+        jScrollPane14.setViewportView(txtEstoqueMaximo);
 
-        jLabel4.setText("Último Aumento:");
+        labelUltimoAumento.setText("Último Aumento:");
 
-        jScrollPane15.setViewportView(txtultimoaumento);
+        jScrollPane15.setViewportView(txtUltimoAumento);
 
-        sair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        sair.setText("SAIR");
-        sair.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSair.setText("SAIR");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sairActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
-        listar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        listar.setText("LISTAR");
-        listar.addActionListener(new java.awt.event.ActionListener() {
+        btnListar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnListar.setText("LISTAR");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listarActionPerformed(evt);
+                btnListarActionPerformed(evt);
             }
         });
 
-        alterar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        alterar.setText("ALTERAR");
-        alterar.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAlterar.setText("ALTERAR");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alterarActionPerformed(evt);
+                btnAlterarActionPerformed(evt);
             }
         });
 
-        remover.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        remover.setText("REMOVER");
-        remover.addActionListener(new java.awt.event.ActionListener() {
+        btnRemover.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRemover.setText("REMOVER");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removerActionPerformed(evt);
+                btnRemoverActionPerformed(evt);
             }
         });
 
-        cadastrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cadastrar.setText("CADASTRAR");
-        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCadastrar.setText("CADASTRAR");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarActionPerformed(evt);
+                btnCadastrarActionPerformed(evt);
             }
         });
 
@@ -308,57 +310,57 @@ public class FormProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sair, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(listar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(remover, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(sair, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(listar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(remover, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        promocao.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        promocao.setForeground(new java.awt.Color(0, 0, 204));
-        promocao.setText("Promoção:");
+        labelPromocao.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelPromocao.setForeground(new java.awt.Color(0, 0, 204));
+        labelPromocao.setText("Promoção:");
 
-        grupopromocao.add(btpromocaonao);
-        btpromocaonao.setSelected(true);
-        btpromocaonao.setText("Não");
-        btpromocaonao.addActionListener(new java.awt.event.ActionListener() {
+        grupopromocao.add(radioPromocaoNao);
+        radioPromocaoNao.setSelected(true);
+        radioPromocaoNao.setText("Não");
+        radioPromocaoNao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btpromocaonaoActionPerformed(evt);
+                radioPromocaoNaoActionPerformed(evt);
             }
         });
 
-        grupopromocao.add(btpromocaosim);
-        btpromocaosim.setText("Sim");
-        btpromocaosim.addActionListener(new java.awt.event.ActionListener() {
+        grupopromocao.add(radioPromocaoSim);
+        radioPromocaoSim.setText("Sim");
+        radioPromocaoSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btpromocaosimActionPerformed(evt);
+                radioPromocaoSimActionPerformed(evt);
             }
         });
 
-        valordapromocao.setText("Valor da Promoção:");
+        labelValorPromocao.setText("Valor da Promoção:");
 
-        jScrollPane11.setViewportView(txtvalordapromocao);
+        jScrollPane11.setViewportView(txtValorDaPromocao);
 
-        validadedapromocao.setText("Validade da Promoção:");
+        labelValidadePromocao.setText("Validade da Promoção:");
 
-        jScrollPane12.setViewportView(txtvalidadedapromocao);
+        jScrollPane12.setViewportView(txtValidadeDaPromocao);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -368,28 +370,28 @@ public class FormProduto extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(validadedapromocao)
+                    .addComponent(labelValidadePromocao)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(valordapromocao)
-                    .addComponent(btpromocaosim)
-                    .addComponent(btpromocaonao)
-                    .addComponent(promocao))
+                    .addComponent(labelValorPromocao)
+                    .addComponent(radioPromocaoSim)
+                    .addComponent(radioPromocaoNao)
+                    .addComponent(labelPromocao))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(promocao)
+                .addComponent(labelPromocao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btpromocaonao)
+                .addComponent(radioPromocaoNao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btpromocaosim)
+                .addComponent(radioPromocaoSim)
                 .addGap(18, 18, 18)
-                .addComponent(valordapromocao)
+                .addComponent(labelValorPromocao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(validadedapromocao)
+                .addComponent(labelValidadePromocao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 45, Short.MAX_VALUE))
@@ -412,7 +414,7 @@ public class FormProduto extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(unidades, 0, 241, Short.MAX_VALUE)
+                                        .addComponent(comboUnidades, 0, 241, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -420,96 +422,97 @@ public class FormProduto extends javax.swing.JFrame {
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(apresentacao)
+                                                .addComponent(labelApresentacao)
                                                 .addGap(130, 130, 130)
-                                                .addComponent(comissao))))
+                                                .addComponent(labelComissao))))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(unidade)
+                                        .addComponent(labelUnidade)
                                         .addGap(590, 590, 590)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(codigodebarras)
+                                    .addComponent(labelCodigoBarras)
                                     .addComponent(txtcodigodebarras, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(estoqueminimo)
-                                    .addComponent(txtestoquemaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtestoquemaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(estoquemaximo))
+                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jScrollPane15)
-                                        .addGap(274, 274, 274))
-                                    .addComponent(jLabel4)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(descricao)
-                                .addGap(302, 302, 302)
-                                .addComponent(nomereduzido)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btproduto)
-                                            .addComponent(btservico))
+                                            .addComponent(labelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(radioProduto)
+                                            .addComponent(radioServico))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(convenio)
-                                            .addComponent(cxdesconto))
+                                            .addComponent(labelConvenio)
+                                            .addComponent(checkboxDesconto))
                                         .addGap(92, 92, 92))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(posicaodeestoque, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(labelPosicaoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(valordecompra)
+                                                    .addComponent(labelValorCompra)
                                                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(custooperacional))
+                                                    .addComponent(labelCustoOperacional))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(margemdelucro))
+                                                    .addComponent(labelMargemLucro))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(valoravista)
+                                                    .addComponent(labelValorVista)
                                                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(desconto)
+                                                    .addComponent(labelDesconto)
                                                     .addComponent(jScrollPane10)))
-                                            .addComponent(valoresdevarejo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(labelValoresVarejo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(127, 127, 127)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addGap(1, 1, 1)
-                                                        .addComponent(vendadoproduto))
-                                                    .addComponent(btquantidade)
-                                                    .addComponent(btvalor))
+                                                        .addComponent(labelVendaProduto))
+                                                    .addComponent(radioQuantidade)
+                                                    .addComponent(radioValor))
                                                 .addGap(75, 75, 75)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(btestoquesim)
-                                                    .addComponent(btestoquenao)
-                                                    .addComponent(estoqueonline))))
+                                                    .addComponent(radioEstoqueSim)
+                                                    .addComponent(radioEstoqueNao)
+                                                    .addComponent(labelEstoqueOnline))))
                                         .addGap(57, 57, 57)))
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15))))
+                                .addGap(15, 15, 15))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(labelDescricao)
+                                        .addGap(302, 302, 302)
+                                        .addComponent(labelNomeReduzido))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(labelEstoqueMinimo)
+                                        .addGap(85, 85, 85)
+                                        .addComponent(labelEstoqueMaximo)
+                                        .addGap(58, 58, 58)
+                                        .addComponent(labelUltimoAumento)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dadosprodutos, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idprodutos))
+                            .addComponent(labelDadosBasicos, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelIdentificaoProduto))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(idProdutotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buscarprodutos)
+                        .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1)))
                 .addGap(18, 18, 18)
@@ -523,71 +526,71 @@ public class FormProduto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(idprodutos)
+                        .addComponent(labelIdentificaoProduto)
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(idProdutotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buscarprodutos))
+                                .addComponent(txtIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnBuscar))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
-                        .addComponent(dadosprodutos)
+                        .addComponent(labelDadosBasicos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(descricao)
-                            .addComponent(nomereduzido))
+                            .addComponent(labelDescricao)
+                            .addComponent(labelNomeReduzido))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(unidade)
-                            .addComponent(apresentacao)
-                            .addComponent(comissao)
-                            .addComponent(codigodebarras))
+                            .addComponent(labelUnidade)
+                            .addComponent(labelApresentacao)
+                            .addComponent(labelComissao)
+                            .addComponent(labelCodigoBarras))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtcodigodebarras, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                            .addComponent(unidades))
+                            .addComponent(comboUnidades))
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(vendadoproduto)
+                                            .addComponent(labelVendaProduto)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btquantidade)
+                                            .addComponent(radioQuantidade)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btvalor))
+                                            .addComponent(radioValor))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(tipo)
+                                            .addComponent(labelTipo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btproduto)
+                                            .addComponent(radioProduto)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btservico)))
+                                            .addComponent(radioServico)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(convenio)
+                                        .addComponent(labelConvenio)
                                         .addGap(3, 3, 3)
-                                        .addComponent(cxdesconto))
+                                        .addComponent(checkboxDesconto))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(estoqueonline)
+                                        .addComponent(labelEstoqueOnline)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btestoquenao)
+                                        .addComponent(radioEstoqueNao)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btestoquesim)))
+                                        .addComponent(radioEstoqueSim)))
                                 .addGap(35, 35, 35)
-                                .addComponent(valoresdevarejo)
+                                .addComponent(labelValoresVarejo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(valordecompra)
-                                    .addComponent(custooperacional)
-                                    .addComponent(margemdelucro)
-                                    .addComponent(valoravista)
-                                    .addComponent(desconto))
+                                    .addComponent(labelValorCompra)
+                                    .addComponent(labelCustoOperacional)
+                                    .addComponent(labelMargemLucro)
+                                    .addComponent(labelValorVista)
+                                    .addComponent(labelDesconto))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -596,12 +599,12 @@ public class FormProduto extends javax.swing.JFrame {
                                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(35, 35, 35)
-                                .addComponent(posicaodeestoque)
+                                .addComponent(labelPosicaoEstoque)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(estoqueminimo)
-                                    .addComponent(estoquemaximo)
-                                    .addComponent(jLabel4))
+                                    .addComponent(labelEstoqueMinimo)
+                                    .addComponent(labelEstoqueMaximo)
+                                    .addComponent(labelUltimoAumento))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -613,89 +616,89 @@ public class FormProduto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void unidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unidadesActionPerformed
+    private void comboUnidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUnidadesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_unidadesActionPerformed
+    }//GEN-LAST:event_comboUnidadesActionPerformed
 
-    private void btpromocaonaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpromocaonaoActionPerformed
+    private void radioPromocaoNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPromocaoNaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btpromocaonaoActionPerformed
+    }//GEN-LAST:event_radioPromocaoNaoActionPerformed
 
-    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
 
         Produto produto = new Produto();
 
         produto.setId(listaDeProdutos.size() == 0 ? 1 : listaDeProdutos.size() + 1);
-        produto.setIsConvenio(cxdesconto.isSelected());
-        produto.setDescricao(txtdescricao.getText());
-        produto.setNome(txtnomereduzido.getText());
-        produto.setUnidade((String) unidades.getSelectedItem());
-        produto.setApresentacao(txtapresentacao.getText());
-        produto.setComissao(Double.parseDouble(txtcomissao.getText()));
-        produto.setCodigoBarras(txtcodigo.getText());
-        produto.setTipoProduto(btproduto.isSelected() ? 0 : 1);
-        produto.setVendaDoProduto(btquantidade.isSelected() ? 0 : 1);
-        produto.setIsEstoqueOnline(btestoquesim.isSelected());
-        produto.setIsPromocao(btpromocaosim.isSelected());
-        produto.setValorDeCompra(Double.parseDouble(txtvalordecompra.getText()));
-        produto.setCustoOperacional(Double.parseDouble(txtcustooperacional.getText()));
-        produto.setMargemDeLucro(Double.parseDouble(txtmargemdelucro.getText()));
-        produto.setValorVista(Double.parseDouble(txtvaloravista.getText()));
-        produto.setDesconto(Double.parseDouble(txtdesconto.getText()));
-        produto.setValorPromocao(Double.parseDouble(txtvalordapromocao.getText()));
-        produto.setEstoqueMin(Integer.parseInt(txtestoqueminimo.getText()));
-        produto.setEstoqueMax(Integer.parseInt(txtaumentomaximo.getText()));
-        produto.setUltimoAumento(txtultimoaumento.getText());
-        produto.setValidadePromocao(txtvalidadedapromocao.getText());
+        produto.setIsConvenio(checkboxDesconto.isSelected());
+        produto.setDescricao(txtDescricao.getText());
+        produto.setNome(txtNomeReduzido.getText());
+        produto.setUnidade((String) comboUnidades.getSelectedItem());
+        produto.setApresentacao(txtApresentacao.getText());
+        produto.setComissao(Double.parseDouble(txtComissao.getText()));
+        produto.setCodigoBarras(txtCodigoDeBarras.getText());
+        produto.setTipoProduto(radioProduto.isSelected() ? 0 : 1);
+        produto.setVendaDoProduto(radioQuantidade.isSelected() ? 0 : 1);
+        produto.setIsEstoqueOnline(radioEstoqueSim.isSelected());
+        produto.setIsPromocao(radioPromocaoSim.isSelected());
+        produto.setValorDeCompra(Double.parseDouble(txtValorDeCompra.getText()));
+        produto.setCustoOperacional(Double.parseDouble(txtCustoOperacional.getText()));
+        produto.setMargemDeLucro(Double.parseDouble(txtMargemDeLucro.getText()));
+        produto.setValorVista(Double.parseDouble(txtValorVista.getText()));
+        produto.setDesconto(Double.parseDouble(txtDesconto.getText()));
+        produto.setValorPromocao(Double.parseDouble(txtValorDaPromocao.getText()));
+        produto.setEstoqueMin(Integer.parseInt(txtEstoqueMinimo.getText()));
+        produto.setEstoqueMax(Integer.parseInt(txtEstoqueMaximo.getText()));
+        produto.setUltimoAumento(txtUltimoAumento.getText());
+        produto.setValidadePromocao(txtValidadeDaPromocao.getText());
 
         listaDeProdutos.add(produto);
         limparCampos();
 
-    }//GEN-LAST:event_cadastrarActionPerformed
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     public void limparCampos() {
 
-        txtdescricao.setText("");
-        cxdesconto.setSelected(false);
-        txtnomereduzido.setText("");
-        unidades.setSelectedItem((Object) "Centímetro");
-        txtapresentacao.setText("");
-        txtcomissao.setText("");
-        txtcodigo.setText("");
-        btproduto.setSelected(true);
-        btservico.setSelected(false);
-        btquantidade.setSelected(true);
-        btvalor.setSelected(false);
-        btestoquesim.setSelected(false);
-        btestoquenao.setSelected(true);
-        btpromocaosim.setSelected(false);
-        btpromocaonao.setSelected(true);
-        txtvalordecompra.setText("");
-        txtcustooperacional.setText("");
-        txtmargemdelucro.setText("");
-        txtvaloravista.setText("");
-        txtdesconto.setText("");
-        txtvalordapromocao.setText("");
-        txtestoqueminimo.setText("");
-        txtaumentomaximo.setText("");
-        txtultimoaumento.setText("");
-        txtvalidadedapromocao.setText("");
+        txtDescricao.setText("");
+        checkboxDesconto.setSelected(false);
+        txtNomeReduzido.setText("");
+        comboUnidades.setSelectedItem((Object) "Centímetro");
+        txtApresentacao.setText("");
+        txtComissao.setText("");
+        txtCodigoDeBarras.setText("");
+        radioProduto.setSelected(true);
+        radioServico.setSelected(false);
+        radioQuantidade.setSelected(true);
+        radioValor.setSelected(false);
+        radioEstoqueSim.setSelected(false);
+        radioEstoqueNao.setSelected(true);
+        radioPromocaoSim.setSelected(false);
+        radioPromocaoNao.setSelected(true);
+        txtValorDeCompra.setText("");
+        txtCustoOperacional.setText("");
+        txtMargemDeLucro.setText("");
+        txtValorVista.setText("");
+        txtDesconto.setText("");
+        txtValorDaPromocao.setText("");
+        txtEstoqueMinimo.setText("");
+        txtEstoqueMaximo.setText("");
+        txtUltimoAumento.setText("");
+        txtValidadeDaPromocao.setText("");
 
     }
 
-    private void cxdescontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxdescontoActionPerformed
+    private void checkboxDescontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxDescontoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cxdescontoActionPerformed
+    }//GEN-LAST:event_checkboxDescontoActionPerformed
 
-    private void btprodutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btprodutoActionPerformed
+    private void radioProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioProdutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btprodutoActionPerformed
+    }//GEN-LAST:event_radioProdutoActionPerformed
 
-    private void btquantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btquantidadeActionPerformed
+    private void radioQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioQuantidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btquantidadeActionPerformed
+    }//GEN-LAST:event_radioQuantidadeActionPerformed
 
-    private void listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarActionPerformed
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
 
         String listagem = "Itens Listados: " + "\n" + "\n";
 
@@ -707,69 +710,69 @@ public class FormProduto extends javax.swing.JFrame {
         System.out.println(listagem);
         JOptionPane.showMessageDialog(null, listagem);
 
-    }//GEN-LAST:event_listarActionPerformed
+    }//GEN-LAST:event_btnListarActionPerformed
 
-    private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
         
-        int idProdutoInformado = idProdutotxt.getText().matches("^[0-9]*$") ? Integer.parseInt(idProdutotxt.getText()) : 0;
+        int idProdutoInformado = txtIdProduto.getText().matches("^[0-9]*$") ? Integer.parseInt(txtIdProduto.getText()) : 0;
         listaDeProdutos.removeIf(x -> x.getId() == idProdutoInformado);
         limparCampos();
         
-    }//GEN-LAST:event_removerActionPerformed
+    }//GEN-LAST:event_btnRemoverActionPerformed
 
-    private void btpromocaosimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpromocaosimActionPerformed
+    private void radioPromocaoSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPromocaoSimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btpromocaosimActionPerformed
+    }//GEN-LAST:event_radioPromocaoSimActionPerformed
 
-    private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_sairActionPerformed
+    }//GEN-LAST:event_btnSairActionPerformed
 
-    private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
 
-        int idProdutoInformado = idProdutotxt.getText().matches("^[0-9]*$") ? Integer.parseInt(idProdutotxt.getText()) : 0;
+        int idProdutoInformado = txtIdProduto.getText().matches("^[0-9]*$") ? Integer.parseInt(txtIdProduto.getText()) : 0;
 
         for (Produto produto : listaDeProdutos) {
 
             if (produto.getId() == idProdutoInformado) {
 
-                produto.setIsConvenio(cxdesconto.isSelected());
-                produto.setDescricao(txtdescricao.getText());
-                produto.setNome(txtnomereduzido.getText());
-                produto.setUnidade((String) unidades.getSelectedItem());
-                produto.setApresentacao(txtapresentacao.getText());
-                produto.setComissao(Double.parseDouble(txtcomissao.getText()));
-                produto.setCodigoBarras(txtcodigo.getText());
-                produto.setTipoProduto(btproduto.isSelected() ? 0 : 1);
-                produto.setVendaDoProduto(btquantidade.isSelected() ? 0 : 1);
-                produto.setIsEstoqueOnline(btestoquesim.isSelected());
-                produto.setIsPromocao(btpromocaosim.isSelected());
-                produto.setValorDeCompra(Double.parseDouble(txtvalordecompra.getText()));
-                produto.setCustoOperacional(Double.parseDouble(txtcustooperacional.getText()));
-                produto.setMargemDeLucro(Double.parseDouble(txtmargemdelucro.getText()));
-                produto.setValorVista(Double.parseDouble(txtvaloravista.getText()));
-                produto.setDesconto(Double.parseDouble(txtdesconto.getText()));
-                produto.setValorPromocao(Double.parseDouble(txtvalordapromocao.getText()));
-                produto.setEstoqueMin(Integer.parseInt(txtestoqueminimo.getText()));
-                produto.setEstoqueMax(Integer.parseInt(txtaumentomaximo.getText()));
-                produto.setUltimoAumento(txtultimoaumento.getText());
-                produto.setValidadePromocao(txtvalidadedapromocao.getText());
+                produto.setIsConvenio(checkboxDesconto.isSelected());
+                produto.setDescricao(txtDescricao.getText());
+                produto.setNome(txtNomeReduzido.getText());
+                produto.setUnidade((String) comboUnidades.getSelectedItem());
+                produto.setApresentacao(txtApresentacao.getText());
+                produto.setComissao(Double.parseDouble(txtComissao.getText()));
+                produto.setCodigoBarras(txtCodigoDeBarras.getText());
+                produto.setTipoProduto(radioProduto.isSelected() ? 0 : 1);
+                produto.setVendaDoProduto(radioQuantidade.isSelected() ? 0 : 1);
+                produto.setIsEstoqueOnline(radioEstoqueSim.isSelected());
+                produto.setIsPromocao(radioPromocaoSim.isSelected());
+                produto.setValorDeCompra(Double.parseDouble(txtValorDeCompra.getText()));
+                produto.setCustoOperacional(Double.parseDouble(txtCustoOperacional.getText()));
+                produto.setMargemDeLucro(Double.parseDouble(txtMargemDeLucro.getText()));
+                produto.setValorVista(Double.parseDouble(txtValorVista.getText()));
+                produto.setDesconto(Double.parseDouble(txtDesconto.getText()));
+                produto.setValorPromocao(Double.parseDouble(txtValorDaPromocao.getText()));
+                produto.setEstoqueMin(Integer.parseInt(txtEstoqueMinimo.getText()));
+                produto.setEstoqueMax(Integer.parseInt(txtEstoqueMaximo.getText()));
+                produto.setUltimoAumento(txtUltimoAumento.getText());
+                produto.setValidadePromocao(txtValidadeDaPromocao.getText());
 
             }
         }
 
         limparCampos();
         
-    }//GEN-LAST:event_alterarActionPerformed
+    }//GEN-LAST:event_btnAlterarActionPerformed
 
-    private void idProdutotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idProdutotxtActionPerformed
-    }//GEN-LAST:event_idProdutotxtActionPerformed
+    private void txtIdProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdProdutoActionPerformed
+    }//GEN-LAST:event_txtIdProdutoActionPerformed
 
-    private void buscarprodutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarprodutosActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
 
         Produto produto = null;
-        int idProdutoInformado = idProdutotxt.getText().matches("^[0-9]*$") ? Integer.parseInt(idProdutotxt.getText()) : 0;
-        String nomeProdutoInformado = nomeProduto.getText();
+        int idProdutoInformado = txtIdProduto.getText().matches("^[0-9]*$") ? Integer.parseInt(txtIdProduto.getText()) : 0;
+        String nomeProdutoInformado = txtNomeProduto.getText();
 
         List<Produto> list = listaDeProdutos.stream()
                 .filter(x -> x.getId() == idProdutoInformado || x.getNome().equals(nomeProdutoInformado))
@@ -781,107 +784,84 @@ public class FormProduto extends javax.swing.JFrame {
 
         if (produto != null) {
 
-            txtdescricao.setText(produto.getDescricao());
-            txtnomereduzido.setText(produto.getNome());
-            txtapresentacao.setText(produto.getApresentacao());
-            txtcomissao.setText(String.valueOf(produto.getComissao()));
-            txtcodigo.setText(produto.getCodigoBarras());
-            txtvalordecompra.setText(String.valueOf(produto.getValorDeCompra()));
-            txtcustooperacional.setText(String.valueOf(produto.getCustoOperacional()));
-            txtmargemdelucro.setText(String.valueOf(produto.getMargemDeLucro()));
-            txtvaloravista.setText(String.valueOf(produto.getValorVista()));
-            txtdesconto.setText(String.valueOf(produto.getDesconto()));
-            txtvalordapromocao.setText(String.valueOf(produto.getValorPromocao()));
-            txtultimoaumento.setText(produto.getUltimoAumento());
-            txtvalidadedapromocao.setText(produto.getValidadePromocao());
-            txtestoqueminimo.setText(String.valueOf(produto.getEstoqueMin()));
-            txtaumentomaximo.setText(String.valueOf(produto.getEstoqueMax()));
-            unidades.setSelectedItem((Object) produto.getUnidade());
-            cxdesconto.setSelected(produto.isIsConvenio());
+            txtDescricao.setText(produto.getDescricao());
+            txtNomeReduzido.setText(produto.getNome());
+            txtApresentacao.setText(produto.getApresentacao());
+            txtComissao.setText(String.valueOf(produto.getComissao()));
+            txtCodigoDeBarras.setText(produto.getCodigoBarras());
+            txtValorDeCompra.setText(String.valueOf(produto.getValorDeCompra()));
+            txtCustoOperacional.setText(String.valueOf(produto.getCustoOperacional()));
+            txtMargemDeLucro.setText(String.valueOf(produto.getMargemDeLucro()));
+            txtValorVista.setText(String.valueOf(produto.getValorVista()));
+            txtDesconto.setText(String.valueOf(produto.getDesconto()));
+            txtValorDaPromocao.setText(String.valueOf(produto.getValorPromocao()));
+            txtUltimoAumento.setText(produto.getUltimoAumento());
+            txtValidadeDaPromocao.setText(produto.getValidadePromocao());
+            txtEstoqueMinimo.setText(String.valueOf(produto.getEstoqueMin()));
+            txtEstoqueMaximo.setText(String.valueOf(produto.getEstoqueMax()));
+            comboUnidades.setSelectedItem((Object) produto.getUnidade());
+            checkboxDesconto.setSelected(produto.isIsConvenio());
 
             if (produto.getTipoProduto() == 0) {
-                btproduto.setSelected(true);
+                radioProduto.setSelected(true);
             } else {
-                btservico.setSelected(true);
+                radioServico.setSelected(true);
             }
 
             if (produto.getVendaDoProduto() == 0) {
-                btquantidade.setSelected(true);
+                radioQuantidade.setSelected(true);
             } else {
-                btvalor.setSelected(true);
+                radioValor.setSelected(true);
             }
 
             if (produto.isIsEstoqueOnline()) {
-                btestoquesim.setSelected(true);
+                radioEstoqueSim.setSelected(true);
             } else {
-                btestoquenao.setSelected(true);
+                radioEstoqueNao.setSelected(true);
             }
 
             if (produto.getVendaDoProduto() == 0) {
-                btquantidade.setSelected(true);
+                radioQuantidade.setSelected(true);
             } else {
-                btvalor.setSelected(true);
+                radioValor.setSelected(true);
             }
 
             if (produto.isIsPromocao()) {
-                btpromocaosim.setSelected(true);
+                radioPromocaoSim.setSelected(true);
             } else {
-                btpromocaonao.setSelected(true);
+                radioPromocaoNao.setSelected(true);
             }
 
         } else {
             JOptionPane.showMessageDialog(null, "Produto não encontrado!");
         }
 
-    }//GEN-LAST:event_buscarprodutosActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-
-        ArrayList<Produto> listaDeProdutos = new ArrayList<Produto>();
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FormProduto().setVisible(true);
             }
         });
     }
-
-    public static ArrayList<Produto> listaDeProdutos = new ArrayList<Produto>();
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton alterar;
-    private javax.swing.JLabel apresentacao;
-    private javax.swing.JRadioButton btestoquenao;
-    private javax.swing.JRadioButton btestoquesim;
-    private javax.swing.JRadioButton btproduto;
-    private javax.swing.JRadioButton btpromocaonao;
-    private javax.swing.JRadioButton btpromocaosim;
-    private javax.swing.JRadioButton btquantidade;
-    private javax.swing.JRadioButton btservico;
-    private javax.swing.JRadioButton btvalor;
-    private javax.swing.JButton buscarprodutos;
-    private javax.swing.JButton cadastrar;
-    private javax.swing.JLabel codigodebarras;
-    private javax.swing.JLabel comissao;
-    private javax.swing.JLabel convenio;
-    private javax.swing.JLabel custooperacional;
-    private javax.swing.JCheckBox cxdesconto;
-    private javax.swing.JLabel dadosprodutos;
-    private javax.swing.JLabel desconto;
-    private javax.swing.JLabel descricao;
-    private javax.swing.JLabel estoquemaximo;
-    private javax.swing.JLabel estoqueminimo;
-    private javax.swing.JLabel estoqueonline;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnListar;
+    private javax.swing.JButton btnRemover;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JCheckBox checkboxDesconto;
+    private javax.swing.JComboBox<String> comboUnidades;
     private javax.swing.ButtonGroup grupoestoque;
     private javax.swing.ButtonGroup grupopromocao;
     private javax.swing.ButtonGroup grupotipo;
     private javax.swing.ButtonGroup grupovenda;
-    private javax.swing.JTextField idProdutotxt;
-    private javax.swing.JLabel idprodutos;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -898,39 +878,56 @@ public class FormProduto extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JButton listar;
-    private javax.swing.JLabel margemdelucro;
-    private javax.swing.JTextPane nomeProduto;
-    private javax.swing.JLabel nomereduzido;
-    private javax.swing.JLabel posicaodeestoque;
-    private javax.swing.JLabel promocao;
-    private javax.swing.JButton remover;
-    private javax.swing.JButton sair;
-    private javax.swing.JLabel tipo;
-    private javax.swing.JTextPane txtapresentacao;
-    private javax.swing.JTextPane txtaumentomaximo;
-    private javax.swing.JTextPane txtcodigo;
+    private javax.swing.JLabel labelApresentacao;
+    private javax.swing.JLabel labelCodigoBarras;
+    private javax.swing.JLabel labelConvenio;
+    private javax.swing.JLabel labelCustoOperacional;
+    private javax.swing.JLabel labelDadosBasicos;
+    private javax.swing.JLabel labelDesconto;
+    private javax.swing.JLabel labelDescricao;
+    private javax.swing.JLabel labelEstoqueMaximo;
+    private javax.swing.JLabel labelEstoqueMinimo;
+    private javax.swing.JLabel labelEstoqueOnline;
+    private javax.swing.JLabel labelIdentificaoProduto;
+    private javax.swing.JLabel labelMargemLucro;
+    private javax.swing.JLabel labelNomeReduzido;
+    private javax.swing.JLabel labelPosicaoEstoque;
+    private javax.swing.JLabel labelPromocao;
+    private javax.swing.JLabel labelTipo;
+    private javax.swing.JLabel labelUltimoAumento;
+    private javax.swing.JLabel labelUnidade;
+    private javax.swing.JLabel labelValidadePromocao;
+    private javax.swing.JLabel labelValorCompra;
+    private javax.swing.JLabel labelValorPromocao;
+    private javax.swing.JLabel labelValorVista;
+    private javax.swing.JLabel labelValoresVarejo;
+    private javax.swing.JLabel labelVendaProduto;
+    private javax.swing.JRadioButton radioEstoqueNao;
+    private javax.swing.JRadioButton radioEstoqueSim;
+    private javax.swing.JRadioButton radioProduto;
+    private javax.swing.JRadioButton radioPromocaoNao;
+    private javax.swing.JRadioButton radioPromocaoSim;
+    private javax.swing.JRadioButton radioQuantidade;
+    private javax.swing.JRadioButton radioServico;
+    private javax.swing.JRadioButton radioValor;
+    private javax.swing.JTextPane txtApresentacao;
+    private javax.swing.JTextPane txtCodigoDeBarras;
+    private javax.swing.JTextPane txtComissao;
+    private javax.swing.JTextPane txtCustoOperacional;
+    private javax.swing.JTextPane txtDesconto;
+    private javax.swing.JTextPane txtDescricao;
+    private javax.swing.JTextPane txtEstoqueMaximo;
+    private javax.swing.JTextPane txtEstoqueMinimo;
+    private javax.swing.JTextField txtIdProduto;
+    private javax.swing.JTextPane txtMargemDeLucro;
+    private javax.swing.JTextPane txtNomeProduto;
+    private javax.swing.JTextPane txtNomeReduzido;
+    private javax.swing.JTextPane txtUltimoAumento;
+    private javax.swing.JTextPane txtValidadeDaPromocao;
+    private javax.swing.JTextPane txtValorDaPromocao;
+    private javax.swing.JTextPane txtValorDeCompra;
+    private javax.swing.JTextPane txtValorVista;
     private javax.swing.JScrollPane txtcodigodebarras;
-    private javax.swing.JTextPane txtcomissao;
-    private javax.swing.JTextPane txtcustooperacional;
-    private javax.swing.JTextPane txtdesconto;
-    private javax.swing.JTextPane txtdescricao;
     private javax.swing.JScrollPane txtestoquemaximo;
-    private javax.swing.JTextPane txtestoqueminimo;
-    private javax.swing.JTextPane txtmargemdelucro;
-    private javax.swing.JTextPane txtnomereduzido;
-    private javax.swing.JTextPane txtultimoaumento;
-    private javax.swing.JTextPane txtvalidadedapromocao;
-    private javax.swing.JTextPane txtvaloravista;
-    private javax.swing.JTextPane txtvalordapromocao;
-    private javax.swing.JTextPane txtvalordecompra;
-    private javax.swing.JLabel unidade;
-    private javax.swing.JComboBox<String> unidades;
-    private javax.swing.JLabel validadedapromocao;
-    private javax.swing.JLabel valoravista;
-    private javax.swing.JLabel valordapromocao;
-    private javax.swing.JLabel valordecompra;
-    private javax.swing.JLabel valoresdevarejo;
-    private javax.swing.JLabel vendadoproduto;
     // End of variables declaration//GEN-END:variables
 }
